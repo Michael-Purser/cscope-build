@@ -1,0 +1,3 @@
+[submodule "external/bash-scripting-utils"]
+	path = external/bash-scripting-utils
+	url = https://github.com/Michael-Purser/bash-scripting-utils
