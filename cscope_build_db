@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ./external/bash-scripting-utils/execution
-source ./external/bash-scripting-utils/logging
-source ./external/bash-scripting-utils/validation
+source "${BASH_SOURCE%/*}"/external/bash-scripting-utils/execution
+source "${BASH_SOURCE%/*}"/external/bash-scripting-utils/logging
+source "${BASH_SOURCE%/*}"/external/bash-scripting-utils/validation
 
 # Variable names
 SRC_LOCATION_ARG_NAME="src_location"
