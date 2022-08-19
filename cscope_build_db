@@ -13,7 +13,7 @@ usage()
 {
     log  ""
     bold "SYNOPSIS"
-    bold "    $(basename "${0}") [-h] <$SRC_LOCATION_ARG_NAME> <$OUT_LOCATION_ARG_NAME>"
+    bold "    $(basename "${0}") [-h] [-n] [-v] <$SRC_LOCATION_ARG_NAME> <$OUT_LOCATION_ARG_NAME>"
     log ""
     bold "DESCRIPTION"
     log  "    Generates a CSCOPE database file for C++ projects."
@@ -81,8 +81,9 @@ execute "find ${SRC_LOCATION} -name '*.hpp' > '${CSCOPE_FILES_PATH}'"
 execute "find '${SRC_LOCATION}' -name '*.cpp' > '${CSCOPE_FILES_PATH}'"
 
 # Generate CSCOPE database
-info "Generating CSCOPE database"
-execute "cscope -b '${CSCOPE_FILES_PATH}'"
+info "Generating CSCOPE database"i
+execute "cscope -Rb '${CSCOPE_FILES_PATH}'"
+execute "mv ${CSCOPE_OUT_NAME} ${OUT_LOCATION}"
 info "Database file generated at: ${CSCOPE_OUT_PATH}"
 
 success
